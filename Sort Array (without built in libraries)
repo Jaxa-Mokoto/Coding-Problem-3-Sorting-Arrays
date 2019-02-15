@@ -1,0 +1,52 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+Author: Modjadji Mokoto (@Jaxa Mokoto)
+Published Date: 15/02/2019
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Problem 3: write code to sort a given array from smallest to the largest number, without using any convenience methods (i.e sorting in c++)
+int sorting_array()
+{
+	//define the unsorted array
+	int unsorted_array[10] = {0};
+
+	//get input from the user to fill the array with 10 integeral values
+	
+	for (int x = 0; x <= 9 ; x++)
+	{
+		cout << "Enter up to 10 intergers to fill the array: ";
+		cin >> unsorted_array[x];
+
+	}
+
+	//now, sort the given array
+
+	for (int i = 0; i <= 9; i++)
+	{
+		for (int j = 0; j <= 9 - 1; j++)
+		{
+			if (unsorted_array[j] >= unsorted_array[j + 1])
+			{
+				int temp = unsorted_array[j];
+				unsorted_array[j] = unsorted_array[j + 1];
+				unsorted_array[j + 1] = temp;
+
+			}
+		}
+	}
+
+	//Finally, display the sorted array in asscending order
+	cout << "The sorted array is as follows: ";
+	for (int p = 0; p <= 9; p++)
+	{                
+		cout << unsorted_array[p] << " ";
+		
+	}
+
+	return true;
+}
+
+int main() //call the defined function
+{
+  sorting_array();
+}
